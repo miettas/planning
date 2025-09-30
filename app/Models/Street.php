@@ -11,7 +11,7 @@ class Street extends Model
     use Searchable;
 
     protected $primaryKey = 'id';
-    protected $fillable = ['street','streetname','street_info'];
+    protected $fillable = ['street','streetname','street_info','thumb','alt','street_info'];
 
     public function pimage(): HasMany
     {

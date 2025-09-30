@@ -9,9 +9,9 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Pimage extends Model
 {
     use Searchable;
-
+	
     protected $primaryKey = 'pimgid';
-    protected $fillable = ['pname','ppath','pext','palt','pcaption','pcredit','width','rating','streets_street_id'];
+    protected $fillable = ['pname','ppath','pext','palt','pcaption','pcredit','width','rating','streets_street_id','street_id-2','street_id-3'];
 
     public function street(): BelongsTo
     {

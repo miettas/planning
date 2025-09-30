@@ -2,13 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
-// use Illuminate\Support\Facades\Route;
-
-Route::get('/', [App\Http\Controllers\Directories_plsController::class, 'welcome'])->name('welcome');
-
-// Route::get('/', function () {
-//     return view('welcome');
-// )};
 
 /*
 |--------------------------------------------------------------------------
@@ -65,8 +58,6 @@ Route::get('SearchImages', [App\Http\Controllers\SearchController::class, 'searc
 Route::get('SearchPages', [App\Http\Controllers\SearchController::class, 'searchpages'])->name('SearchPages');
 Route::get('SearchPeople', [App\Http\Controllers\SearchController::class, 'searchpeople'])->name('SearchAPeople');
 Route::get('SearchPlaces', [App\Http\Controllers\SearchController::class, 'searchplaces'])->name('SearchPlaces');
-
-Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
