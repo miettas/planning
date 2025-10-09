@@ -50,7 +50,7 @@ class PimagesController extends Controller
      */
     public function show($img)
     {
-        $pimage = Pimage::findOrFail($img); 
+        $pimage = Pimage::findOrFail($img);
         $st = Street::findOrFail($pimage['streets_street_id']);
 
         list($prevChap,$nextChap) = nextBook('App\Models\Pimage','pimgid',$pimage->pimgid,'streets_street_id',$pimage->streets_street_id);

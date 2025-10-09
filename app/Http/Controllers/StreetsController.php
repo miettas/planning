@@ -15,7 +15,7 @@ class StreetsController extends Controller
      */
     public function index()
     {
-        $streets = Street::with('pimage')->get();
+        $streets = Street::with('pimage')->orderBy('streetname')->get();
         return view('Street.index', compact(['streets']));
     }
 

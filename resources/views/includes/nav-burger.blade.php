@@ -1,16 +1,27 @@
-<div class="hamburger-menu">
-    <input id="menu__toggle" type="checkbox" />
-    <label class="menu__btn" for="menu__toggle">
-      <span></span>
-    </label>
-
-    <ul class="menu__box">
-        <li><a class="nav-link pl-8" href="/">Home</a></li>
-        <li><a class="nav-link pl-8" href="{{route('buildlanding')}}">Buildings</a></li>
-        <li><a class="nav-link pl-8" href="{{route('planlanding')}}">Plans</a></li>
-        <li><a class="nav-link pl-8" href="{{ url('diys') }}">DIY</a></li>
-        <li><a class="nav-link pl-8" href="{{ url('books') }}">Publications</a></li>
-        <li><a class="nav-link pl-8" href="{{ url('people') }}">People</a></li>
-        <li><a class="nav-link pl-8" href="{{ url('asknoxes', [28]) }}">Contact</a></li>
-    </ul>
-</div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Brand</a>
+    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" href="articles">Articles</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="books_pls">Publications</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"href="people_pls">People</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="places">Places</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="streets">Streets</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

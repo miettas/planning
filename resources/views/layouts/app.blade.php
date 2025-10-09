@@ -18,7 +18,7 @@
     <body>
         <div class="container">
             <div class="w-screen">
-                 @include('includes.navigation')
+                 @include('includes.mynav')
             </div>
             @yield('content')
         </div>   
