@@ -33,8 +33,7 @@ class Article extends Model
             'artauthor' => $this->artauthor,
             'artimage' => $this->artimage,
             'artcaption' => $this->artcaption,
-            'arttag' => $this->arttag,
-            'arttype' => $this->arttype,
+            
         ];
     }
 }

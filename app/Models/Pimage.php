@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Pimage extends Model
 {
     use Searchable;
-	
+    
     protected $primaryKey = 'pimgid';
     protected $fillable = ['pname','ppath','pext','palt','pcaption','pcredit','width','rating','streets_street_id','street_id-2','street_id-3'];
 
@@ -34,12 +34,12 @@ class Pimage extends Model
     public function toSearchableArray(): array
     {
         return [
-            'pname' => $this->imgname,
-            'ppath' => $this->imgpath,
-            'palt' => $this->alt,
-            'pcaption' => $this->caption,
-            'pcredit' => $this->credit,
-            'rating' => $this->rating,
+            'pname' => $this->pname,
+            'ppath' => $this->ppath,
+            'palt' => $this->aplt,
+            'pcaption' => $this->pcaption,
+            'pcredit' => $this->pcredit,
+            'rating' =>  $this->prating,
         ];
     }
 }

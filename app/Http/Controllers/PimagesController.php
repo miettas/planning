@@ -50,13 +50,13 @@ class PimagesController extends Controller
      */
     public function show($img)
     {
-        $pimage = Pimage::findOrFail($img);
+        $pimage = Pimage::findOrFail($img); 
         $st = Street::findOrFail($pimage['streets_street_id']);
 
-        list($prevChap,$nextChap) = nextBook('App\Models\Pimage','pimgid',$pimage->pimgid,'streets_street_id',$pimage->streets_street_id);
+        list($prevChap,$nextChap) = nextBook('App\Models\Pimage','pimgid',$pimage->pimgid,'streets_street_id',$pimage->streets_street_id,'pname',$pimage->pname);
         list($prevPage,$nextPage) = nextChapter('App\Models\Pimage','pimgid',$pimage->pimgid,0);
-        
-        return view('Pimage.show', compact(['pimage']))->with('nextChap', $nextChap)->with('prevChap', $prevPage)->with('nextPage', $nextPage)->with('prevPage');
+
+        return view('Pimage.show', compact(['pimage']))->with('st',$st)->with('nextChap', $nextChap)->with('prevChap', $prevChap)->with('nextPage', $nextPage)->with('prevPage',$prevPage);
     }
 
     /**

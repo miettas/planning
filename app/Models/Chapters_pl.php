@@ -46,7 +46,7 @@ class Chapters_pl extends Model
     public function toSearchableArray(): array
     {
         return [
-            'chaptername' => $this->chaptername,
+            'chapname' => $this->chapname,
             'chapid' => $this->chapid,
         ];
     }

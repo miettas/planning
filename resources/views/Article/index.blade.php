@@ -5,7 +5,6 @@
 <div class="row">
 
 	<div class="col-sm-2">
-
 	</div>
 
 	<div class="col">
@@ -45,16 +44,14 @@
 					{!! $info = abbreviate($art->abstract,$art->artid,'artid','articles',120) !!}
 					<br /><br />		
 				</div>
-				@endforeach
 			</div>
-		
-
+		@endforeach
+			
 	</div>
-	 {!! $article->render() !!}	
 	<div class="col-sm-1">
 	</div>
+	{!! $article->render() !!}	
 </div>
-
 
 @stop
 

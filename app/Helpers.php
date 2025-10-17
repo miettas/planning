@@ -119,8 +119,8 @@ function getImage($file,$type)   //  $table,$tblid,$id,$type)
 function imagesize($path,$name,$ext){
 
     $fullName = $name.'.'.$ext;
-    $big    = preg_replace('/200/', '1800', $path); 
-    $small  = preg_replace('/1800/', '200', $big); 
+	$big    = preg_replace('/200/', '1800', $path); 
+	$small  = preg_replace('/1800/', '600', $big); 
     $big    = "$big/$fullName";
     $small  = "$small/$fullName"; 
     $thumb  = "$path/$fullName";
@@ -154,20 +154,21 @@ function imageWidth($img)
     
 }
 
-function nextBook($mdl,$fld,$fldval,$relatedfld,$rfval){
-	if(preg_match('/Akimage/', $mdl) || preg_match('/Chapter/', $mdl)){ 
+function nextBook($mdl,$fld,$fldval,$relatedfld,$rfval,$order){
+	if(preg_match('/Pimage/', $mdl) || preg_match('/Chapter/', $mdl)){ 
+		
 		$chapter = $mdl::distinct($relatedfld)->get([$relatedfld])->pluck($relatedfld);
 		$pos = $chapter->search($rfval);
 
 		list($prev,$next) = nextPrevious($pos,$chapter);
-
+	
 		$p = $mdl::where($relatedfld,$prev)->first();
 		$p = $p->$fld;
 		$n = $mdl::where($relatedfld,$next)->first();
 		$n = $n->$fld;
 	}
 	else{
-		$chapter = $mdl::distinct()->where($relatedfld, $rfval)->orderBy($fld)->get([$fld])->pluck($fld);
+		$chapter = $mdl::distinct()->where($relatedfld, $rfval)->orderBy($order)->get([$fld])->pluck($fld);
 		$pos = $chapter->search($fldval);	
 
 		list($prev,$next) = nextPrevious($pos,$chapter);	
@@ -184,7 +185,7 @@ function nextChapter($mdl,$fld,$fldval,$id ){
 	
 	$bk = $mdl::distinct()->orderBy($id)->get([$fld])->pluck($fld);
 	$pos = $bk->search($fldval);
-
+	
 	list($prev,$next) = nextPrevious($pos,$bk);
 
 	$prev = $mdl::where($fld,$prev)->first();

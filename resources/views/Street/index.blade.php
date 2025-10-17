@@ -6,7 +6,7 @@
 
 	<!-- col 1 -->
 
-	<div class="col-4" style="max-width:150px;">
+	<div class="col-1" style="max-width:150px;">
 		
 	</div>
 	<!-- end col 1 -->
@@ -32,7 +32,7 @@
 						
 							<td style="padding-left:20px">
 								<div  class="basis-4/5 max-w-[560px]" >
-									<h4><a  href="{{url('streets', $s->id)}}">{!!  $s->streetname !!}</a></h4>
+									<h5><a  href="{{url('streets', $s->id)}}">{!!  $s->streetname !!}</a></h5>
 
 								</div>
 							</td>

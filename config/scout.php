@@ -16,7 +16,7 @@ return [
     |
     */
 
-    'driver' => env('SCOUT_DRIVER', 'algolia'),
+    'driver' => env('SCOUT_DRIVER', 'database'),
 
     /*
     |--------------------------------------------------------------------------
@@ -112,16 +112,16 @@ return [
     |
     */
 
-    'algolia' => [
-        'id' => env('ALGOLIA_APP_ID', ''),
-        'secret' => env('ALGOLIA_SECRET', ''),
-        'index-settings' => [
-            // 'users' => [
-            //     'searchableAttributes' => ['id', 'name', 'email'],
-            //     'attributesForFaceting'=> ['filterOnly(email)'],
-            // ],
-        ],
-    ],
+    // 'algolia' => [
+    //     'id' => env('ALGOLIA_APP_ID', ''),
+    //     'secret' => env('ALGOLIA_SECRET', ''),
+    //     'index-settings' => [
+    //         // 'users' => [
+    //         //     'searchableAttributes' => ['id', 'name', 'email'],
+    //         //     'attributesForFaceting'=> ['filterOnly(email)'],
+    //         // ],
+    //     ],
+    // ],
 
     /*
     |--------------------------------------------------------------------------
@@ -136,15 +136,15 @@ return [
     |
     */
 
-    'meilisearch' => [
-        'host' => env('MEILISEARCH_HOST', 'http://localhost:7700'),
-        'key' => env('MEILISEARCH_KEY'),
-        'index-settings' => [
-            // 'users' => [
-            //     'filterableAttributes'=> ['id', 'name', 'email'],
-            // ],
-        ],
-    ],
+    // 'meilisearch' => [
+    //     'host' => env('MEILISEARCH_HOST', 'http://localhost:7700'),
+    //     'key' => env('MEILISEARCH_KEY'),
+    //     'index-settings' => [
+    //         // 'users' => [
+    //         //     'filterableAttributes'=> ['id', 'name', 'email'],
+    //         // ],
+    //     ],
+    // ],
 
     /*
     |--------------------------------------------------------------------------
@@ -157,30 +157,31 @@ return [
     |
     */
 
-    'typesense' => [
-        'client-settings' => [
-            'api_key' => env('TYPESENSE_API_KEY', 'xyz'),
-            'nodes' => [
-                [
-                    'host' => env('TYPESENSE_HOST', 'localhost'),
-                    'port' => env('TYPESENSE_PORT', '8108'),
-                    'path' => env('TYPESENSE_PATH', ''),
-                    'protocol' => env('TYPESENSE_PROTOCOL', 'http'),
-                ],
-            ],
-            'nearest_node' => [
-                'host' => env('TYPESENSE_HOST', 'localhost'),
-                'port' => env('TYPESENSE_PORT', '8108'),
-                'path' => env('TYPESENSE_PATH', ''),
-                'protocol' => env('TYPESENSE_PROTOCOL', 'http'),
-            ],
-            'connection_timeout_seconds' => env('TYPESENSE_CONNECTION_TIMEOUT_SECONDS', 2),
-            'healthcheck_interval_seconds' => env('TYPESENSE_HEALTHCHECK_INTERVAL_SECONDS', 30),
-            'num_retries' => env('TYPESENSE_NUM_RETRIES', 3),
-            'retry_interval_seconds' => env('TYPESENSE_RETRY_INTERVAL_SECONDS', 1),
-        ],
+    // 'typesense' => [
+    //     'client-settings' => [
+    //         'api_key' => env('TYPESENSE_API_KEY', 'xyz'),
+    //         'nodes' => [
+    //             [
+    //                 'host' => env('TYPESENSE_HOST', 'localhost'),
+    //                 'port' => env('TYPESENSE_PORT', '8108'),
+    //                 'path' => env('TYPESENSE_PATH', ''),
+    //                 'protocol' => env('TYPESENSE_PROTOCOL', 'http'),
+    //             ],
+    //         ],
+    //         'nearest_node' => [
+    //             'host' => env('TYPESENSE_HOST', 'localhost'),
+    //             'port' => env('TYPESENSE_PORT', '8108'),
+    //             'path' => env('TYPESENSE_PATH', ''),
+    //             'protocol' => env('TYPESENSE_PROTOCOL', 'http'),
+    //         ],
+    //         'connection_timeout_seconds' => env('TYPESENSE_CONNECTION_TIMEOUT_SECONDS', 2),
+    //         'healthcheck_interval_seconds' => env('TYPESENSE_HEALTHCHECK_INTERVAL_SECONDS', 30),
+    //         'num_retries' => env('TYPESENSE_NUM_RETRIES', 3),
+    //         'retry_interval_seconds' => env('TYPESENSE_RETRY_INTERVAL_SECONDS', 1),
+    //     ],
+
         // 'max_total_results' => env('TYPESENSE_MAX_TOTAL_RESULTS', 1000),
-        'model-settings' => [
+        // 'model-settings' => [
             // User::class => [
             //     'collection-schema' => [
             //         'fields' => [
@@ -203,7 +204,7 @@ return [
             //         'query_by' => 'name'
             //     ],
             // ],
-        ],
-    ],
+        // ],
+    // ],
 
 ];

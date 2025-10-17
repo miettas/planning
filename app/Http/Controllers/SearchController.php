@@ -19,7 +19,7 @@ class SearchController extends Controller
 {
     public function searcharticles(Request $request)
 	{
-		$r = $request->input('query'); 
+		$r = $request->input('query');
 		$article = Article::search($r)->paginate(15);
 		if(isset($article)){
 			if( !empty($article)){
@@ -40,7 +40,7 @@ class SearchController extends Controller
 		$chapter = Chapters_pl::search($r)->paginate(15);
 		if(isset($chapter)){
 			if( !empty($chapter)){
-				return view('Chapter.index', compact('chapter_pl'));
+				return view('Chapter.index', compact('chapter'));
 			}
 			else
 			{
@@ -159,6 +159,34 @@ class SearchController extends Controller
 			else
 			{	
 				return view('Place.index', ['noresult'=>'No place matches your query. Try again . . .']);
+			}
+		}
+	}
+	public function searchpimages(Request $request)
+	{   
+		$r = $request->input('query');
+		$pimage = Pimage::search($r)->paginate(15); 
+		if(isset($pimage)){
+			if( !empty($pimage)){
+				return view('Pimage.index', compact('pimage'));
+			}
+			else
+			{	
+				return view('Pimage.index', ['noresult'=>'No image matches your query. Try again . . .']);
+			}
+		}
+	}
+	public function searchstreets(Request $request)
+	{ 
+		$r = $request->input('query');
+		$street = Street::search($r)->paginate(15);
+		if(isset($street)){
+			if( !empty($street)){
+				return view('Street.index', compact('Street'));
+			}
+			else
+			{	
+				return view('Street.index', ['noresult'=>'No street matches your query. Try again . . .']);
 			}
 		}
 	}
