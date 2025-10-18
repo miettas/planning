@@ -1,20 +1,19 @@
-@extends('layouts/app')
+@extends('layouts/guest')
 
 @section('content')
 
-<div class="row p-4">
 
-	<!-- col 1 -->
-
-	<div class="col-1" style="max-width:150px;">
-		
-	</div>
-	<!-- end col 1 -->
 	
-	<!-- col 2 -->
-	<div class="col-8" > 
+	
+<div class="container">
+		<div>
+			@include('includes.search-dark', ['tble' => 'SearchStreets'])
+		</div>
 
-		@include('includes.searches', ['tble' => 'SearchStreets'])
+		<div class="row">
+			<div class="col-12">
+
+		
 		
 		@if( isset($noresult))
 			<h3>{{ $noresult }}</h3>
@@ -51,7 +50,7 @@
 			</div>
 		@endif
 
-	</div>
+	</div></div>
 	<!-- end col 2 -->
 
 	<!-- col 3 -->

@@ -27,23 +27,26 @@
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mr-auto">
-                            <li class="nav-item active">
+                        <li class="nav-item active">
                                 <a class="nav-link" href="/">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="articles">Articles</a>
+                                <a class="nav-link" href="{{route('articles.index')}}">Articles</a></li>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="books_pls">Publications</a>
+                                <a class="nav-link" href="{{route('books.index')}}">Publications</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="people_pls">People</a>
+                                <a class="nav-link" href="{{route('people.index')}}">People</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="places">Places</a>
+                                <a class="nav-link" href="{{route('places.index')}}">Places</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="streets">Streets</a>
+                                <a class="nav-link" href="{{route('streets.index')}}">Streets</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{route('pimages.index')}}">Images</a>
                             </li>
                         </ul>
                     </div>
