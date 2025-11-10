@@ -87,7 +87,7 @@ class Directories_plsController extends Controller
      */
     public function destroy($dir)
     {
-        //
+        // ///
     }
     public function welcome()
     {

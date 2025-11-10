@@ -7,7 +7,7 @@
 	
 <div class="container">
 		<div>
-			@include('includes.search-dark', ['tble' => 'SearchStreets'])
+			@include('includes.search-dark', ['tble' => 'SearchStreetsimport "resources/scss/bankgothic_medium.scss'])
 		</div>
 
 		<div class="row">
