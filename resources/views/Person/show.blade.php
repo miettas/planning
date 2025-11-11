@@ -28,7 +28,7 @@
 
 				<h1>{{ $person->salutation.' '  ?? ''}}{{ $person->first.' '  ?? ''}}{{  $person->last }} {{ $person->honorifics  ?? '' }}</h1>
 				
-				@if($person->ppimage)
+				@if($person->ppimage && $person->ppid != 69)
 					<div class="block w40 right">
 						{!! $person->ppimage !!}
 						<span class="caption">{!! $person->ppcaption !!}
