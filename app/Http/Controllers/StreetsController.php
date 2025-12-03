@@ -16,7 +16,7 @@ class StreetsController extends Controller
     public function index()
     {
         $streets = Street::with('pimage')->orderBy('streetname')->get();
-        return view('Street.index', compact(['streets']));
+        return view('Street.index', compact('streets'));
     }
 
     /**
@@ -52,8 +52,8 @@ class StreetsController extends Controller
         $streets = Street::findOrFail($id);
         
         $img200 = Pimage::where('streets_street_id', $streets->id)
-            ->orWhere('street_id-2', $streets->id)
-            ->orWhere('street_id-3', $streets->id)
+            ->orWhere('street_id2', $streets->id)
+            ->orWhere('street_id3', $streets->id)
             ->orderBy('pname')->get();
 
         list($prevPage,$nextPage) = nextChapter('App\Models\Street','id',$streets->id, '');

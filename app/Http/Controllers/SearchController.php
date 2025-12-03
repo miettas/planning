@@ -35,7 +35,7 @@ class SearchController extends Controller
 	//----------------------------------------------
 	   		
 	public function searchchapters(Request $request)
-	{					
+	{
 		$r = $request->input('query');
 		$chapter = Chapters_pl::search($r)->paginate(15);
 		if(isset($chapter)){
@@ -109,7 +109,7 @@ class SearchController extends Controller
 				return view('Mimage.index', compact('mimages'));
 			}
 			else
-			{	
+			{
 				return view('Mimage.index', ['noresult'=>'No image matches your query. Try again . . .']);
 			}
 		}
@@ -136,10 +136,10 @@ class SearchController extends Controller
 	public function searchpeople(Request $request)
 	{ 
 		$r = $request->input('query');
-		$person = People_pl::search($r)->paginate(15);
-		if(isset($person)){
-			if( !empty($person)){
-				return view('Person.index', compact('person'));
+		$people = People_pl::search($r)->paginate(15);
+		if(isset($people)){
+			if( !empty($people)){
+				return view('Person.index', compact('people'));
 			}
 			else
 			{	
@@ -165,10 +165,10 @@ class SearchController extends Controller
 	public function searchpimages(Request $request)
 	{   
 		$r = $request->input('query');
-		$pimage = Pimage::search($r)->paginate(15); 
-		if(isset($pimage)){
-			if( !empty($pimage)){
-				return view('Pimage.index', compact('pimage'));
+		$pimages = Pimage::where($r)->paginate(15); dd($pimages);
+		if(isset($pimages)){
+			if( !empty($pimages)){
+				return view('Pimage.index', compact('pimages'));
 			}
 			else
 			{	
@@ -179,10 +179,11 @@ class SearchController extends Controller
 	public function searchstreets(Request $request)
 	{ 
 		$r = $request->input('query');
-		$street = Street::search($r)->paginate(15);
-		if(isset($street)){
-			if( !empty($street)){
-				return view('Street.index', compact('Street'));
+		$streets = Street::search($r)->paginate(15);
+
+		if(isset($streets)){
+			if( !empty($streets)){
+				return view('Street.index', compact('streets'));
 			}
 			else
 			{	

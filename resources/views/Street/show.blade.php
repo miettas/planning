@@ -19,7 +19,7 @@
 					
 						<div style="display:inline-block;margin-top:10px;margin-left:10px;max-width:200px;>" >
 							<a href="{!! url('pimages', [$img->pimgid] ) !!}">
-								<img src="{!! $img->ppath !!}/{!! $img->pname !!}.{!! $img->pext !!}" alt="{!! $img->palt !!}" width="$img->width" >	
+								<img src="{!! $img->ppath !!}/{!! $img->pname !!}.{!! $img->pext !!}" alt="{!! $img->palt !!}" width="{!! $img->width !!}" >	
 							</a>
 						</div>
 					@endforeach

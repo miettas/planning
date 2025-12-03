@@ -4,7 +4,7 @@
 	
 	<div class="container">
 		<div>
-			@include('includes.search-dark', ['tble' => 'SearchPimages'])
+		@include('includes.searches', ['tble' => 'SearchPimages'])
 		</div>
 
 		<div class="row">
